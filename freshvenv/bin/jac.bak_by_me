@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# shim wrapper for jac: run jac via the python that lives in the same bin directory
+DIR="$(cd "$(dirname "$0")" && pwd)"
+PY="$DIR/python"
+if [ ! -x "$PY" ]; then
+  # fallback to any python in PATH
+  PY="$(command -v python || command -v python3)"
+fi
+exec "$PY" -m jaclang.cli.cli "$@"

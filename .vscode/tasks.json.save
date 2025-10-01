@@ -1,0 +1,57 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Gemini Flask Server",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-ic",
+        "source ${workspaceFolder}/jacenv/bin/activate && python3 ${workspaceFolder}/server.py"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "isBackground": true
+    }
+  ]
+}
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Gemini Flask Server",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-ic",
+        "source ${workspaceFolder}/jacenv/bin/activate && python3 ${workspaceFolder}/server.py"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "isBackground": true
+    }
+  ]
+}
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Gemini Flask Server",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-ic",
+        "source ${workspaceFolder}/jacenv/bin/activate && python3 ${workspaceFolder}/server.py"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "isBackground": true
+    }
+  ]
+}

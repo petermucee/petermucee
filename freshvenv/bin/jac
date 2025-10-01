@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# absolute-python shim for jac — calls the venv python directly
+PY="/home/peter/jac_project/jacenv/bin/python"
+exec "$PY" -m jaclang.cli.cli "$@"

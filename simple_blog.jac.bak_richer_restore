@@ -1,0 +1,24 @@
+# simple_blog.jac - no 'can' methods (sanity version)
+node User {
+    has username: str;
+    has email: str;
+}
+
+node Post {
+    has title: str;
+    has content: str;
+}
+
+with entry {
+    alice = root ++> User(username="alice", email="alice@example.com");
+    bob   = root ++> User(username="bob", email="bob@example.com");
+
+    p1 = alice[0] ++> Post(title="Hello Jac!", content="My first post in Jac");
+    p2 = bob[0]   ++> Post(title="Graph ideas", content="Using Jac to model relations");
+
+    print("User " + alice[0].username + " created post: " + p1[0].title);
+    print("User " + bob[0].username + " created post: " + p2[0].title);
+
+    print("User " + alice[0].username + " <" + alice[0].email + ">");
+    print("Post: " + p1[0].title + " -> " + p1[0].content[0:40] + "...");
+}

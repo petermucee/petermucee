@@ -1,0 +1,32 @@
+# simple_blog.jac - semicolon style (docs-canonical)
+node User {
+    has username: str;
+    has email: str;
+
+    can show_info {
+        print("User " + self.username + " <" + self.email + ">")
+    }
+}
+
+node Post {
+    has title: str;
+    has content: str;
+
+    can summary {
+        print("Post: " + self.title + " -> " + self.content[0:40] + "...")
+    }
+}
+
+with entry {
+    alice = root ++> User(username="alice", email="alice@example.com");
+    bob   = root ++> User(username="bob", email="bob@example.com");
+
+    p1 = alice[0] ++> Post(title="Hello Jac!", content="My first post in Jac");
+    p2 = bob[0]   ++> Post(title="Graph ideas", content="Using Jac to model relations");
+
+    print("User " + alice[0].username + " created post: " + p1[0].title);
+    print("User " + bob[0].username + " created post: " + p2[0].title);
+
+    alice[0].show_info();
+    p1[0].summary();
+}
